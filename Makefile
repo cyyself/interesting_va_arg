@@ -1,13 +1,13 @@
 CXX = g++
-
+CFLAGS = -static
 main: test.o main.o
-	@$(CXX) -static test.o main.o -o main
+	@$(CXX) $(CFLAGS) test.o main.o -o main
 
 test.o: test.cpp
-	@$(CXX) -c test.cpp
+	@$(CXX) $(CFLAGS) -c test.cpp
 
 main.o: main.cpp
-	@$(CXX) -c main.cpp
+	@$(CXX) $(CFLAGS) -c main.cpp
 	
 
 .PHONY: clean run
