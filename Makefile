@@ -1,11 +1,13 @@
+CXX = g++
+
 main: test.o main.o
-	g++ test.o main.o -o main
+	$(CXX) -static test.o main.o -o main
 
 test.o: test.cpp
-	g++ -c test.cpp
+	$(CXX) -c test.cpp
 
 main.o: main.cpp
-	g++ -c main.cpp
+	$(CXX) -c main.cpp
 
 .PHONY: clean run
 
